@@ -4,12 +4,27 @@ import java.io.UnsupportedEncodingException;
 import java.util.Random;
 
 public class StringUtil {
+	//判断输入内容是否是数字，考虑负数，小数和整数
+	public static boolean isNumber(String src) {
+		String s = "^(-)?\\d+(\\.\\d+)?$";
+		return src.matches(s);
+	}
+	//判断是否是中国手机号
+	public static boolean isPhone(String src) {
+		String s = "^1[3|4|5|7|8]\\d{9}$";
+		return src.matches(s);
+	}
+	// 判断是否邮箱
+		public static boolean isEMail(String src) {
+			String s = "www.\\w+@\\w+\\.\\w+";
+			return src.matches(s);
+		}
 	//方法1：判断源字符串是否有值，空引号(空白字符串)也算没值 (5分)
 	public static boolean hasLength(String src){
 		
 		return null!=src && src.length()>0;
 	}
-	//方法2：判断源字符串	
+	//方法2：判断源字符串是否有值，空白字符串加空格也算没有	
 	public static boolean hasText(String src){
 		
 		return null!=src && src.trim().length()>0;

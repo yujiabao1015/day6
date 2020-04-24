@@ -5,7 +5,19 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class StringUtilTest {
-
+	
+	@Test
+	public void testIsNumber() {
+		System.out.println(StringUtil.isNumber("111111111"));
+	}
+	@Test
+	public void testIsPhone() {
+		System.out.println(StringUtil.isPhone("18994461347"));
+	}
+	@Test
+	public void testIsEMail() {
+		System.out.println(StringUtil.isEMail("www.1739916324@qq.com"));
+	}
 	@Test
 	public void testHasLength() {
 		
